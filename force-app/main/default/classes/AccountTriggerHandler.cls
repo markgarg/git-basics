@@ -1,6 +1,10 @@
 public class AccountTriggerHandler extends TriggerHandler {
 	private static Boolean firstTime = true;
     private static Integer numOfTimes = 0;
+
+    protected override void beforeInsert() {
+        System.debug('in before insert trigger handler');
+    }
     
     protected override void afterUpdate(){
         AccountTriggerHandler.numOfTimes++;
