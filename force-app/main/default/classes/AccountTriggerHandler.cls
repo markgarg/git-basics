@@ -8,6 +8,7 @@ public class AccountTriggerHandler extends TriggerHandler {
     }
     
     protected override void afterUpdate(){
+        System.debug('rohit 1');
         AccountTriggerHandler.numOfTimes++;
         System.debug('num of times :' + AccountTriggerHandler.numOfTimes);
         if(firstTime) {
