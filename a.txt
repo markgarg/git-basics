@@ -1,3 +1,4 @@
 Hello, i'm a text file named A.
 Now I'm adding some new lines
 to this file.
+this is Rj updates.
