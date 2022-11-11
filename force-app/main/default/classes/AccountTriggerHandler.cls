@@ -2,9 +2,9 @@ public class AccountTriggerHandler extends TriggerHandler {
 	private static Boolean firstTime = true;
     private static Integer numOfTimes = 0;
 
+
     protected override void beforeInsert() {
         System.debug('in before insert trigger handler');
-        System.debug('Ram Git');
         System.debug('trigger new :' + Trigger.new);
     }
     
