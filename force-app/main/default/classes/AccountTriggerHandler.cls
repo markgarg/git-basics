@@ -4,6 +4,7 @@ public class AccountTriggerHandler extends TriggerHandler {
 
     protected override void beforeInsert() {
         System.debug('in before insert trigger handler');
+        System.debug('Ram Git');
         System.debug('trigger new :' + Trigger.new);
     }
     
