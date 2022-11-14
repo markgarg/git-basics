@@ -8,6 +8,7 @@ public class AccountTriggerHandler extends TriggerHandler {
         System.debug('Saravana Git');
         System.debug('Rohit git');
         System.debug('trigger new :' + Trigger.new);
+        System.debug('one more change');
     }
     
     protected override void afterUpdate(){
