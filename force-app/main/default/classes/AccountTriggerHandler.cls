@@ -5,8 +5,9 @@ public class AccountTriggerHandler extends TriggerHandler {
 
     protected override void beforeInsert() {
         System.debug('in before insert trigger handler');
-        System.debug('Saravana Git');
-        System.debug('Rohit git');
+       System.debug('Rohit git');
+        System.debug('Gokul');
+        
         System.debug('trigger new :' + Trigger.new);
         System.debug('one more change');
     }
