@@ -10,6 +10,7 @@ public class AccountTriggerHandler extends TriggerHandler {
         System.debug('trigger new :' + Trigger.new);
         if(Trigger.new.size() > 0){
             // new code
+            // code is finished now
         }
     }
     
