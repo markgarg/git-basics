@@ -9,7 +9,10 @@ public class AccountTriggerHandler extends TriggerHandler {
         System.debug('Gokul');
         
         System.debug('trigger new :' + Trigger.new);
-        System.debug('one more change');
+        if(Trigger.new.size() > 0){
+            // new code
+            // code is finished now
+        }
     }
     
     protected override void afterUpdate(){
