@@ -53,41 +53,9 @@ jobs:
             - name: 'Push source to scratch org'
               run: sfdx force:source:push
 
-            # Assign permissionset
-            - name: 'Assign permissionset to default user'
-              run: sfdx force:user:permset:assign -n ebikes
-
-            # Import sample data
-            - name: 'Import sample data'
-              run: sfdx force:data:tree:import -p ./data/sample-data-plan.json
-
-            # Wait for XP Cloud activation
-            - name: 'Wait for two min for XP Cloud activation'
-              uses: maddox/actions/sleep@master
-              with:
-                  args: 120
-
-            # Publish XP Cloud site
-            - name: 'Publish XP Cloud site'
-              run: sfdx force:community:publish -n E-Bikes
-
-            # Deploy guest profile for XP Cloud site
-            - name: 'Deploy guest profile for XP Cloud site'
-              run: sfdx force:mdapi:deploy -d guest-profile-metadata -w 10
-
             # Run Apex tests in scratch org
             - name: 'Run Apex tests'
               run: sfdx force:apex:test:run -c -r human -d ./tests/apex -w 20
-
-            # Delete temporary test file that Codecov is unable to parse
-            - name: 'Delete coverage file (temporary step)'
-              run: rm ./tests/apex/test-result-707*-codecoverage.json
-
-            # Upload code coverage data
-            - name: 'Upload code coverage for Apex to Codecov.io'
-              uses: codecov/codecov-action@v2.0.2
-              with:
-                  flags: Apex
 
             # Housekeeping
             - name: 'Delete scratch org'
