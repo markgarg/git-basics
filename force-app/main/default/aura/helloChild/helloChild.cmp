@@ -1,7 +1,17 @@
 <aura:component>
-    <aura:attribute name="greeting" type="string" access="public" description="just a greeting"></aura:attribute>
-    <h2>Hello {!v.greeting}, i'm an aura child</h2>
+    <aura:attribute name="greeting" type="String" access="public" description="just a greeting"></aura:attribute>
+    <aura:attribute name="vehicles" type="Object[]" access="public"></aura:attribute>
 
-    <lightning:button variant="base" label="Click me" title="title click me" value="2" onclick="{! c.handleClick }"/>
-
+    <lightning:card>
+        <h2>Hello {!v.greeting}, i'm an aura child</h2>
+        <aura:iteration items="{! v.vehicles }" var="vehicle">
+            <div>
+                Vehicle is: {! vehicle.name }
+                <br />
+                Type: {! vehicle.type }
+            </div>
+        </aura:iteration>
+        <lightning:button variant="base" label="Click me" title="title click me" value="2" onclick="{! c.handleClick }"/>
+        <lightning:button variant="inverse" label="Add one more" title="Add one more" onclick="{! c.addOneMore }"/>
+    </lightning:card>
 </aura:component>	

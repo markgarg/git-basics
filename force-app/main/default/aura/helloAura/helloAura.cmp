@@ -1,5 +1,8 @@
 <aura:component implements="flexipage:availableForAllPageTypes">
     <aura:attribute name="username" type="string" default="Rj" />
-    <h1>Hello, i'm an aura component</h1>
-    <c:helloChild greeting="{! v.username }"></c:helloChild>
+
+    <lightning:card>
+        <h1>Hello, i'm an aura component</h1>
+        <c:helloChild greeting="{! v.username }"></c:helloChild>
+    </lightning:card>
 </aura:component>	
