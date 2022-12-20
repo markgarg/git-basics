@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:attribute name="greeting" type="string" access="public" description="just a greeting"></aura:attribute>
+    <h2>Hello {!v.greeting}, i'm an aura child</h2>
+
+    <lightning:button variant="base" label="Click me" title="title click me" value="2" onclick="{! c.handleClick }"/>
+
+</aura:component>	
