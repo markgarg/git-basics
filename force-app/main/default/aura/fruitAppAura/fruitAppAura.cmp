@@ -1,0 +1,29 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="fruitName" type="String" access="private"></aura:attribute>
+    <aura:attribute name="qty" type="Integer" access="private"></aura:attribute>
+    
+    <lightning:card>
+        <div>
+            <lightning:input label="Fruit Name" type="text" value="{! v.fruitName }"></lightning:input>
+            <lightning:input label="Quantity" type="number" value="{! v.qty }"></lightning:input>
+        </div>
+        <div>
+            <lightning:button variant="brand" 
+                label="Add to basket"
+                onclick="{! c.addToBasket }">
+            </lightning:button>
+            <lightning:button variant="brand" 
+                label="Sorty by Name"
+                onclick="{! c.sortByName }">
+            </lightning:button>
+            <lightning:button variant="brand" 
+                label="Sort by Quantity"
+                onclick="{! c.sortByQty }">
+            </lightning:button>
+        </div>
+        <div>
+            <h1>Fruit Basket</h1>
+            <c:fruitBasketAura aura:id="fruitBasket"></c:fruitBasketAura>
+        </div>
+    </lightning:card>
+</aura:component>	

@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="fruits" type="Object[]" 
+    default="[{'name': 'apple', 'taste':'sweet'},{'name': 'banana', 'taste':'sweet'},{'name': 'orange', 'taste':'sour'}]"/>
+    
+    <aura:method name="changeFruits" action="{! c.changeFruitMethod }" access="public"/>
+
+    <aura:iteration items="{! v.fruits }" var="fruit">
+        <c:fruitAura fruitName="{!fruit.name}" taste="{!fruit.taste}" fruitIsSelected="{! c.fruitSelectionHandler }"/>
+    </aura:iteration>
+</aura:component>

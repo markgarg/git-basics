@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:attribute name="fruitName" type="string" access="public" />
+    <aura:attribute name="taste" type="string" access="public" />
+    
+    <!-- whoever fires the event should register it -->
+    <aura:registerEvent name="fruitIsSelected" type="c:fruitSelected" />
+
+    <div class="slds-border_top slds-border_right slds-border_bottom slds-border_left">
+        <a href="" onclick="{! c.nameClicked }">Fruit is {! v.fruitName }</a>
+        <div>Fruit is {! v.taste }</div>
+    </div>
+</aura:component>
